@@ -57,7 +57,7 @@ const fetchData=async()=>{
      
      <Routes>
      <Route path='/' element={<Home/>}/>
-     <Route path='/CRUD_Operation_deployed_ReactJS_running/' element={<Welcome_File/>}/>
+     <Route path='/CRUD_Operation_deployed_ReactJS_running' element={<Welcome_File/>}/>
      <Route path='/get' element={<Get items={items}/>}/>
      <Route path='/delete' element={<Delete items={items} setItems={setItems}/>}/>
      <Route path='/post' element={<Post items={items} setItems={setItems} name={name} setName={setName} branch={branch} setBranch={setBranch} role={role} setRole={setRole}/>}/> 
