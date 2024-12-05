@@ -10,26 +10,30 @@ e.preventDefault();
             branch,
             role
             }
-            let url='https://my-json-server.typicode.com/newongit/my_JSON_server/items'
+           // let url='https://my-json-server.typicode.com/newongit/my_JSON_server/items'
 
     //let url='http://localhost:3500/items';
-    let obj={
-        method:"POST",
-        headers:{
-            'content-type':'application/json'
-        },
-        body:JSON.stringify(data)
-    }
-const post= await API_URL(url,obj);
-     if(post){
-         console.log(data);
-        alert(post)
-    }
-    else{
-        alert('sumitted Successfully');
+//     let obj={
+//         method:"POST",
+//         headers:{
+//             'content-type':'application/json'
+//         },
+//         body:JSON.stringify(data)
+//     }
+// const post= await API_URL(url,obj);
+//      if(post){
+//          console.log(data);
+//         alert(post)
+//     }
+//     else{
+//         alert('sumitted Successfully');
+//         let newData=[...items,data];
+//         setItems(newData);
+//     }
+
+    alert('sumitted Successfully');
         let newData=[...items,data];
         setItems(newData);
-    }
 }
     
 
