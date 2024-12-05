@@ -38,7 +38,7 @@ const fetchData=async()=>{
   let response=await fetch(API_URL,fetchData);
   if(!response.ok) throw Error("Not found");
   let res=await response.json();
-  setItems(res);
+  //setItems(res);
   console.log(res);
  } catch (error) {
   console.log(error.message);
