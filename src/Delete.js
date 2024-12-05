@@ -2,21 +2,25 @@ import API_URL from "./API_URL"
 
 const Delete =({items,setItems})=>{
 const deleteData=async(id)=>{
-let url='http://localhost:3500/items'
-let obj={
-    method:'DELETE'
-}
-const del=await API_URL(`${url}/${parseInt(id,10)}`,obj);
-if(del){
-    alert("something went wrong");
-    console.log(id);
-}
+//let url='http://localhost:3500/items ***still in use
+//***let url='https://my-json-server.typicode.com/newongit/my_JSON_server/items'*** UNSUED
+// let obj={
+//     method:'DELETE'
+// }
+// const del=await API_URL(`${url}/${parseInt(id,10)}`,obj);
+// if(del){
+//     alert("something went wrong");
+//     console.log(id);
+// }
     
-else{
-    alert('Deleted Successfully');
-    const item_=items.filter((item)=>item.id!==id)
-    setItems(item_)
-} 
+// else{
+//     alert('Deleted Successfully');
+//     const item_=items.filter((item)=>item.id!==id)
+//     setItems(item_)
+// } 
+
+const item_=items.filter((item)=>item.id!==id)
+setItems(item_)
 }
 
     return (

@@ -5,8 +5,8 @@ const Patch=({items})=>{
 
 
 const deleteData=(id)=>{
-//let url='https://my-json-server.typicode.com/newongit/my_JSON_server/items'
-let url='http://localhost:3500/items'
+let url='https://my-json-server.typicode.com/newongit/my_JSON_server/items'
+//let url='http://localhost:3500/items'
 let data={
 // id,
 // name,

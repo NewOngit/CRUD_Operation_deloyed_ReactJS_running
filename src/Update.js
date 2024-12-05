@@ -14,31 +14,38 @@ useEffect(()=>{
 
 const onSubmission=async(e)=>{
 e.preventDefault()
-let url ='http://localhost:3500/items'
+//let url='https://my-json-server.typicode.com/newongit/my_JSON_server/items'
+//let url ='http://localhost:3500/items'
 let data={
     id,
     name:editName,
     branch:editBranch,
     role:editRole
 }
-let obj={
-    method:'PATCH',
-    headers:{
-        'content-type':'application-json'
-    },
-    body:JSON.stringify(data)
-};
-const patch=await API_URL(`${url}/${id}`,obj);
-if(patch)
-    alert('Something went wrong');
-else {
-    const oldData=items.filter((item)=>{
+// let obj={
+//     method:'PATCH',
+//     headers:{
+//         'content-type':'application-json'
+//     },
+//     body:JSON.stringify(data)
+// };
+// const patch=await API_URL(`${url}/${id}`,obj);
+// if(patch)
+//     alert('Something went wrong');
+// else {
+//     const oldData=items.filter((item)=>{
+//         return item.id!==id
+//     })
+//     let newData=[...oldData,data]
+//     setItems(newData)
+//     alert('Successfully Updated');
+// }
+ const oldData=items.filter((item)=>{
         return item.id!==id
     })
     let newData=[...oldData,data]
     setItems(newData)
     alert('Successfully Updated');
-}
 }
     return(
         <form className="update" onSubmit={onSubmission}>

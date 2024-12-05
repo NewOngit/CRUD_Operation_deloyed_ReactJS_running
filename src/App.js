@@ -13,7 +13,7 @@ function App() {
 
   const[items,setItems]=useState([
     {
-        "id": 1,
+        "id": "1",
         "name": "hridyesh sharma",
         "branch": "computer science engineering",
         "role": "assistant professor"
@@ -25,29 +25,31 @@ function App() {
   const[editName,setEditName]=useState('')
   const[editRole,setEditRole]=useState('')
   const[editBranch,setEditBranch]=useState('')
-//   useEffect(()=>{
-// let API_URL="http://localhost:3500/items"
-//     let fetchMethod={
-// method:"GET",
-// headers:{
-//   'content-type':'application/json'
-// }
-// }
+  useEffect(()=>{
+    let API_URL='https://my-json-server.typicode.com/newongit/my_JSON_server/items'
 
-// const fetchData=async()=>{
-//  try {
-//   let response=await fetch(API_URL,fetchData);
-//   if(!response.ok) throw Error("Not found");
-//   let res=await response.json();
-//   //setItems(res);
-//   console.log(res);
-//  } catch (error) {
-//   console.log(error.message);
-//  }
+    //let API_URL="http://localhost:3500/items"
+    let fetchMethod={
+method:"GET",
+headers:{
+  'content-type':'application/json'
+}
+}
+
+const fetchData=async()=>{
+ try {
+  let response=await fetch(API_URL,fetchData);
+  if(!response.ok) throw Error("Not found");
+  let res=await response.json();
+  setItems(res);
+  console.log(res);
+ } catch (error) {
+  console.log(error.message);
+ }
   
-// }
-// (async()=>await fetchData())();
-//   },[])
+}
+(async()=>await fetchData())();
+  },[])
 
 
 

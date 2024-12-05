@@ -10,7 +10,9 @@ e.preventDefault();
             branch,
             role
             }
-    let url='http://localhost:3500/items';
+            let url='https://my-json-server.typicode.com/newongit/my_JSON_server/items'
+
+    //let url='http://localhost:3500/items';
     let obj={
         method:"POST",
         headers:{
@@ -21,7 +23,7 @@ e.preventDefault();
 const post= await API_URL(url,obj);
      if(post){
          console.log(data);
-        alert("something went wrong")
+        alert(post)
     }
     else{
         alert('sumitted Successfully');
