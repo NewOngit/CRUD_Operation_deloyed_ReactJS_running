@@ -6,6 +6,7 @@ import Patch from './Patch';
 import Home from './Home';
 import Welcome_File from './Welcome_File';
 import Header from './Header';
+import Missing from './Missing';
 import {useEffect,useState} from 'react'
 import { Route, Routes } from 'react-router-dom';
 function App() {
@@ -24,29 +25,29 @@ function App() {
   const[editName,setEditName]=useState('')
   const[editRole,setEditRole]=useState('')
   const[editBranch,setEditBranch]=useState('')
-  useEffect(()=>{
-let API_URL="http://localhost:3500/items"
-    let fetchMethod={
-method:"GET",
-headers:{
-  'content-type':'application/json'
-}
-}
+//   useEffect(()=>{
+// let API_URL="http://localhost:3500/items"
+//     let fetchMethod={
+// method:"GET",
+// headers:{
+//   'content-type':'application/json'
+// }
+// }
 
-const fetchData=async()=>{
- try {
-  let response=await fetch(API_URL,fetchData);
-  if(!response.ok) throw Error("Not found");
-  let res=await response.json();
-  //setItems(res);
-  console.log(res);
- } catch (error) {
-  console.log(error.message);
- }
+// const fetchData=async()=>{
+//  try {
+//   let response=await fetch(API_URL,fetchData);
+//   if(!response.ok) throw Error("Not found");
+//   let res=await response.json();
+//   //setItems(res);
+//   console.log(res);
+//  } catch (error) {
+//   console.log(error.message);
+//  }
   
-}
-(async()=>await fetchData())();
-  },[])
+// }
+// (async()=>await fetchData())();
+//   },[])
 
 
 
@@ -66,7 +67,7 @@ const fetchData=async()=>{
     <Route path='/patch' element={<Patch items={items}/>}/>
 
      <Route path='/update/:id' element={<Update items={items} setItems={setItems} editName={editName} setEditName={setEditName} editBranch={editBranch} setEditBranch={setEditBranch} editRole={editRole} setEditRole={setEditRole}/>}/>
-     
+     <Route path='*' element={<Missing/>}/>
      </Routes>
     </div>
   );
